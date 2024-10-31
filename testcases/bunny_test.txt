@@ -1,0 +1,75 @@
+
+PerspectiveCamera {
+    center 0.35 0.6 0.8
+    direction -0.5 -0.5 -1
+    up 0 1 0
+    angle 25
+    width 200
+    height 200
+}
+
+Lights {
+    numLights 2
+    DirectionalLight {
+        direction 0.2 -1 -0.4
+	color 0.7 0.7 0.7
+    }
+    DirectionalLight {
+        direction -7 -5 -5
+	color 0.3 0.3 0.3
+    }
+}
+
+Background {
+    color 0.1 0.7 0.2
+}
+
+Materials {
+    numMaterials 7
+    Material { 
+        attenuation 0.75 0.25 0.25
+        type 0
+    }
+    Material { 
+        attenuation 0.25 0.25 0.75 
+        type 0
+    }
+    Material { 
+        attenuation 0.75 0.75 0.75 
+        type 0
+        
+    }
+    Material { 
+        attenuation 0.25 0.75 0.25
+        type 0
+        texture texture/vase.png
+    }
+    Material {
+        attenuation 1 1 1
+        type 1
+    }
+    Material {
+        attenuation 1 1 1
+        refractive 1.5
+        type 2
+    }
+    Material {
+        specularColor 12 12 12
+        type 3
+    }
+}
+
+Group {
+    numObjects 2
+
+    MaterialIndex 2
+    TriangleMesh {
+        obj_file mesh/bunny_1k_vn.obj
+    }
+    MaterialIndex 6
+    Sphere {
+	center 0 6 0 
+        radius 2
+    }
+}
+
