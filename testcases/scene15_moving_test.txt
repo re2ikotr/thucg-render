@@ -1,0 +1,122 @@
+
+PerspectiveCamera {
+    center 0 0 10
+    direction 0 -0.3 -1
+    up 0 1 0
+    angle 30
+    width 800
+    height 800
+    start 0
+    end 1
+    len_radius 0.000001
+    focus 9.2
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 0.0 5 5
+        color 0.9 0.9 0.9 
+    }
+}
+
+Background {
+    color 0 0 0 
+}
+
+Materials {
+    numMaterials 7
+    Material { 
+        attenuation 0.75 0.25 0.25
+        type 0
+        texture texture/world_cloud.jpg
+    }
+    Material { 
+        attenuation 0.25 0.25 0.75 
+        type 0
+        texture texture/jupyter.png
+    }
+    Material { 
+        attenuation 0.75 0.75 0.75 
+        type 0
+        
+    }
+    Material { 
+        attenuation 0.25 0.75 0.25
+        type 0
+        texture texture/watercolor.jpg
+    }
+    Material {
+        attenuation 1 1 1
+        type 1
+    }
+    Material {
+        attenuation 1 1 1
+        refractive 1.5
+        type 2
+    }
+    Material {
+        specularColor 12 12 12
+        type 3
+    }
+}
+
+Group {
+    numObjects 11
+    MaterialIndex 3
+    Sphere {
+	center 0 0 0
+        radius 1 
+    }
+    MaterialIndex 0
+    Sphere {
+	center 1 1 2
+        radius 0.75
+    }
+    MaterialIndex 5
+    Sphere {
+	center -1 -1 1 
+        radius 0.75
+    }
+    MaterialIndex 1
+    Sphere {
+	center -1 1 -2 
+        radius 0.75
+    }
+    MaterialIndex 4
+    Sphere {
+	center 1 -1 -1 
+        radius 0.75 
+    }
+    MaterialIndex 1
+    Plane {
+	normal 0 1 0
+        offset -2
+    }
+    MaterialIndex 6
+    Sphere {
+	center 5 5 -5 
+        radius 2
+    }
+    MaterialIndex 6
+    Sphere {
+	center 5 5 5 
+        radius 2
+    }
+    MaterialIndex 6
+    Sphere {
+	center 5 -5 5 
+        radius 4
+    }
+    MaterialIndex 6
+    Sphere {
+	center -5 -5 5 
+        radius 4
+    }
+    MaterialIndex 6
+    Sphere {
+	center 0 6 0 
+        radius 2
+    }
+}
+

@@ -1,0 +1,88 @@
+
+PerspectiveCamera {
+    center 0 0 10
+    direction 0 0 -1
+    up 0 1 0
+    angle 30
+    width 800
+    height 800
+    start 0
+    end 1
+    len_radius 99999
+    focus 100
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 0.0 5 5
+        color 0.9 0.9 0.9 
+    }
+}
+
+Background {
+    color 0 0 0 
+}
+
+Materials {
+    numMaterials 5
+    Material { 
+        specularColor 1 1 1
+        type 1
+    }
+    Material { 
+        specularColor 10 10 10
+        type 3
+        }
+    Material { 
+        attenuation 0 1 0.4
+        type 0
+    }
+    Material { 
+        attenuation 1 1 1 
+	    type 2
+        refractive 2.43
+        }
+    Material { 
+        attenuation 1 1 1
+        type 0
+    }
+}
+
+Group {
+    numObjects 6
+    MaterialIndex 1
+    Sphere {
+        center 1 3 5
+        radius 0.5
+    }
+    Sphere {
+        center -1 3 5
+        radius 0.5
+    }
+    Sphere {
+        center 0 5 0
+        radius 1
+    }
+    MaterialIndex 4
+    Plane {
+	normal 0 1 0
+        offset -2
+    }
+    Plane {
+    normal 0 0 1
+    offset -2
+    }
+    MaterialIndex 3
+    Transform {
+        Translate 0 0 0 
+        Scale 1 1 1
+        XRotate -70
+        YRotate 10
+        TriangleMesh {
+            obj_file mesh/diamond.obj
+        }
+    }
+
+    
+}
